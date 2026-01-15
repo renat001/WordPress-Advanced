@@ -216,7 +216,7 @@ h3{
 }
 h4{
     font-size:28px;
-    line-weight: 2.8rem;
+    line-height: 2.8rem;
     font-weight: bold;
 }
 h5{
@@ -262,7 +262,7 @@ img{
         padding-left: 15px;
     }
 }
-@media(min-width:992px;){
+@media(min-width: 992px){
     .container{
         max-width: 9600;
     }
@@ -614,7 +614,7 @@ footer .container .row{
 }
 .footer-menu ul li.current_page_item a{ 
     font-weight: bold; 
-
+}
 @media (max-width: 768px) {
     .site-footer .container{
         justify-content: safe;
