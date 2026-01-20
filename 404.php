@@ -7,7 +7,7 @@
                 <div class="error-404">
                     <header>
                         <h1>page not found</h1>
-                        <p>Unfortunately, the page tried to reach does not exist on this page.🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️</p>
+                        <p>Unfortunately, the page tried to reach does not exist on this page.🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️🏋️</p>
                     </header>
                     <div class="error">
                         <p>How about doing a search?</p>
