@@ -3,18 +3,25 @@
 
 <article>
 <h2>
-    <?php the_title(); ?>
+    <?php the_title();
+     ?>
 </h2>
-<?php the_content(); ?>
-    <?php edit_post_link('Edit'); ?>
+<?php the_content(); 
+?>
+    <?php edit_post_link('Edit'); 
+    ?>
 </article>
 
 <?php endwhile; ?>
 
-<?php the_posts_pagination(); ?>
+<?php 
+the_posts_pagination(); 
+?>
 
 <?php else : ?>
-<p>No posts found.</p>
+<p>
+    No posts found.
+</p>
 <?php endif; ?>
 
 <?php get_sidebar(); ?>
