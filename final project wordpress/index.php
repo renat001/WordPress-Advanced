@@ -25,4 +25,4 @@ the_posts_pagination();
 <?php endif; ?>
 
 <?php get_sidebar(); ?>
-<?php get_footer(); ?>
+<?php get_footer();?>
