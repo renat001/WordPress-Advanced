@@ -20,7 +20,7 @@ the_posts_pagination();
 
 <?php else : ?>
 <p>
-    No posts found.
+    No posts were found.
 </p>
 <?php endif; ?>
 
