@@ -1,6 +1,8 @@
 <footer>
-<p>©Fitness Blog 2026</p>
+    <div class="container">
+        <p>&copy; <?php echo date('Y'); ?> Fitness Blog. All rights reserved.</p>
+    </div>
 </footer>
-<?php wp_footer();?>
+<?php wp_footer(); ?>
 </body>
 </html>

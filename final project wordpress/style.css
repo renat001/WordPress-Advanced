@@ -1,85 +1,238 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
-font-family: 'Segoe UI', Arial, sans-serif;
-background: linear-gradient(135deg, gray, #fdfdfd);
-margin: 0;
-padding: 0;
-line-height: 1.8;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: linear-gradient(135deg, #f5f5f5, #fdfdfd);
+    color: #333;
+    line-height: 1.8;
 }
 
-
-header h1 {
-margin: 0;
-font-size: 2.2rem;
+/* Container */
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-
-header p {
-opacity: 0.80;
+/* Header */
+.site-header {
+    background: #1a1a1a;
+    color: white;
+    padding: 30px 0;
+    border-bottom: 3px solid #2c5364;
 }
 
-
-nav ul {
-list-style: none;
-padding: 0;
-display: flex;
-gap: 15px;
+.site-branding h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    color: white;
 }
 
-
-nav ul li a {
-color: #ffffff;
-text-decoration: none;
-font-weight: bold;
+.site-branding p {
+    opacity: 0.9;
+    margin-top: 5px;
 }
 
+/* Navigation */
+.main-navigation ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 25px;
+    margin-top: 15px;
+    flex-wrap: wrap;
+}
 
+.main-navigation ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.main-navigation ul li a:hover {
+    color: #66b2ff;
+}
+
+/* Main Content */
+.site-main {
+    padding: 40px 0;
+    min-height: calc(100vh - 300px);
+}
+
+/* Articles */
 article {
-background: #ffffff;
-margin: 20px auto;
-padding: 25px;
-max-width: 800px;
-border-radius: 12px;
-box-shadow: 0 8px 20px black;
+    background: #ffffff;
+    margin: 20px 0;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
 }
 
+article:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
 
+article h1,
 article h2 {
-color: #2c5364;
+    color: #2c5364;
+    margin-bottom: 15px;
 }
 
+article h2 a {
+    text-decoration: none;
+    color: #2c5364;
+    transition: color 0.3s ease;
+}
 
+article h2 a:hover {
+    color: #1a3f5a;
+}
+
+.post-content,
+.page-body,
+.entry-content,
+.archive-excerpt,
+.search-excerpt {
+    margin: 15px 0;
+    color: #555;
+}
+
+/* Error 404 */
+.error-404 {
+    text-align: center;
+    padding: 50px 25px;
+}
+
+.error-404 h1 {
+    font-size: 3rem;
+    color: #c0392b;
+    margin-bottom: 20px;
+}
+
+.error-content {
+    margin-top: 30px;
+}
+
+/* Search Form */
+.search-form {
+    margin: 20px 0;
+}
+
+.search-input-wrapper {
+    display: flex;
+    gap: 10px;
+}
+
+.search-input {
+    flex: 1;
+    padding: 10px 15px;
+    border: 2px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #2c5364;
+}
+
+/* Sidebar */
 aside {
-max-width: 800px;
-margin: 20px auto;
-background: #f0f6ff;
-padding: 20px;
-border-radius: 10px ;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #f0f6ff;
+    border-radius: 10px;
+    border-left: 4px solid #2c5364;
 }
 
-
-button, input[type="submit"] {
-background: #2c5364;
-color: #fff;
-border: none;
-padding: 10px 18px;
-border-radius: 8px;
-cursor: pointer;
+/* Buttons */
+button,
+input[type="submit"],
+.search-submit {
+    background: #2c5364;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background 0.3s ease;
 }
 
-
-button:hover {
-background: #203a43;
+button:hover,
+input[type="submit"]:hover,
+.search-submit:hover {
+    background: #203a43;
 }
 
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 30px 0;
+    flex-wrap: wrap;
+}
 
+.page-numbers {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #2c5364;
+    transition: all 0.3s ease;
+}
+
+.page-numbers:hover,
+.page-numbers.current {
+    background: #2c5364;
+    color: white;
+    border-color: #2c5364;
+}
+
+/* Footer */
 footer {
-text-align: center;
-margin-top: 50px;
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 50px;
+    border-top: 3px solid #2c5364;
 }
 
+footer p {
+    margin: 0;
+}
 
-header, footer {
-background: black;
-color: white;
-padding: 0px;
+/* Responsive */
+@media (max-width: 768px) {
+    .site-branding h1 {
+        font-size: 1.8rem;
+    }
+    
+    .main-navigation ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .search-input-wrapper {
+        flex-direction: column;
+    }
+    
+    article {
+        padding: 15px;
+    }
+    
+    .error-404 h1 {
+        font-size: 2rem;
+    }
 }
