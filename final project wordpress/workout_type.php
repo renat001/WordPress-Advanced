@@ -3,7 +3,7 @@
 <main class="site-main">
     <div class="container">
         <header class="archive-header">
-            <h1><?php the_archive_title(); ?></h1>
+            <h1><?php single_term_title(); ?></h1>
             <?php the_archive_description(); ?>
         </header>
         
@@ -23,7 +23,7 @@
                 <?php the_posts_pagination(); ?>
             </div>
         <?php else : ?>
-            <p>No posts found.</p>
+            <p>No workouts found in this category.</p>
         <?php endif; ?>
     </div>
 </main>

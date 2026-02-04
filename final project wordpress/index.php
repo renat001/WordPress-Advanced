@@ -1,13 +1,13 @@
 <?php get_header(); ?>
 
-<main class="site-main">
+<main id="main" class="site-main">
     <div class="container">
         <!-- Hero/Featured Section -->
         <section class="hero-section">
             <div class="hero-image-container">
                 <div class="image-placeholder-large">
                     <svg class="placeholder-icon" viewBox="0 0 400 200"><rect x="20" y="20" width="360" height="160" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="100" cy="70" r="30" fill="none" stroke="#ccc" stroke-width="2"/><path d="M 40 160 L 150 90 L 240 130 L 360 40" fill="none" stroke="#ccc" stroke-width="2"/></svg>
-                    <p>📸 Add Your Hero/Banner Image Here (Featured Workout or Transformation)</p>
+                    <p></p>
                 </div>
             </div>
             <div class="hero-content">
@@ -35,7 +35,7 @@
                 <div class="about-image-placeholder">
                     <div class="image-placeholder">
                         <svg class="placeholder-icon" viewBox="0 0 300 300"><circle cx="150" cy="100" r="40" fill="none" stroke="#ccc" stroke-width="2"/><rect x="80" y="150" width="140" height="100" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="120" cy="180" r="15" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="180" cy="180" r="15" fill="none" stroke="#ccc" stroke-width="2"/><line x1="150" y1="210" x2="150" y2="250" stroke="#ccc" stroke-width="2"/><line x1="150" y1="230" x2="120" y2="250" stroke="#ccc" stroke-width="2"/><line x1="150" y1="230" x2="180" y2="250" stroke="#ccc" stroke-width="2"/></svg>
-                        <p>📸 Add Fitness Introduction Image (Yourself or Fitness Professional)</p>
+                        <p></p>
                     </div>
                 </div>
             </div>
@@ -61,7 +61,7 @@
                                     <a href="<?php the_permalink(); ?>" class="post-image-placeholder">
                                         <div class="image-placeholder-box">
                                             <svg class="placeholder-icon" viewBox="0 0 200 150"><rect x="10" y="10" width="180" height="130" fill="none" stroke="#ddd" stroke-width="2"/><circle cx="50" cy="50" r="20" fill="none" stroke="#ddd" stroke-width="2"/><path d="M 30 130 L 80 70 L 150 100 L 190 40" fill="none" stroke="#ddd" stroke-width="2"/></svg>
-                                            <p>📷 Add Workout Image Here</p>
+                                            <p>📷</p>
                                         </div>
                                     </a>
                                 <?php endif; ?>

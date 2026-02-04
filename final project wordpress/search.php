@@ -3,7 +3,7 @@
 <main class="site-main">
     <div class="container">
         <header class="search-header">
-            <h1>Search Results</h1>
+            <h1><?php printf( esc_html__( 'Search Results for: %s', 'fitness-theme' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
         </header>
         
         <?php if (have_posts()) : ?>
@@ -23,10 +23,12 @@
             </div>
         <?php else : ?>
             <article class="no-results">
-                <p>No results found for your search.</p>
+                <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'fitness-theme' ); ?></p>
+                <?php get_search_form(); ?>
             </article>
         <?php endif; ?>
     </div>
 </main>
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

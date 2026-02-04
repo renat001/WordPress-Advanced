@@ -3,7 +3,7 @@
 <main class="site-main">
     <div class="container">
         <header class="archive-header">
-            <h1><?php the_archive_title(); ?></h1>
+            <h1><?php post_type_archive_title(); ?></h1>
             <?php the_archive_description(); ?>
         </header>
         
@@ -15,6 +15,9 @@
                         <div class="archive-excerpt">
                             <?php the_excerpt(); ?>
                         </div>
+                        <div class="workout-meta">
+                            <span>Type: <?php the_terms( get_the_ID(), 'workout_type', '', ', ' ); ?></span>
+                        </div>
                     </article>
                 <?php endwhile; ?>
             </div>
@@ -23,7 +26,7 @@
                 <?php the_posts_pagination(); ?>
             </div>
         <?php else : ?>
-            <p>No posts found.</p>
+            <p>No workouts found.</p>
         <?php endif; ?>
     </div>
 </main>
