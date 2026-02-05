@@ -130,10 +130,20 @@ add_action('edit_user_profile_update', 'fitness_save_user_profile_fields');
 
 function fitness_cpt() {
     register_post_type('workout', array(
-        'labels' => array('name' => 'Workouts'),
+        'labels' => array(
+            'name' => 'Workouts',
+            'singular_name' => 'Workout',
+            'add_new' => 'Add New Workout',
+            'edit_item' => 'Edit Workout'
+        ),
         'public' => true,
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments')
+        'show_ui' => true,
+        'show_in_menu' => true,
+        'show_in_rest' => true,
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments'),
+        'capability_type' => 'post',
+        'map_meta_cap' => true
     ));
 }
 add_action('init', 'fitness_cpt');
@@ -183,32 +193,38 @@ function fitness_workout_meta_callback($post) {
 }
 
 function fitness_save_workout_meta($post_id) {
-    if (!isset($_POST['fitness_workout_meta_box_nonce'])) {
+    // Only process workouts
+    if (get_post_type($post_id) !== 'workout') {
         return;
     }
 
-    if (!wp_verify_nonce($_POST['fitness_workout_meta_box_nonce'], 'fitness_workout_meta_box')) {
-        return;
-    }
-
+    // Skip autosave
     if (defined('DOING_AUTOSAVE') && DOING_AUTOSAVE) {
         return;
     }
 
+    // Check capability
     if (!current_user_can('edit_post', $post_id)) {
         return;
     }
 
-    if (isset($_POST['workout_duration'])) {
-        update_post_meta($post_id, '_workout_duration', sanitize_text_field($_POST['workout_duration']));
-    }
+    // Only process if nonce is present (but don't require it for basic post saves)
+    if (isset($_POST['fitness_workout_meta_box_nonce'])) {
+        if (!wp_verify_nonce($_POST['fitness_workout_meta_box_nonce'], 'fitness_workout_meta_box')) {
+            return;
+        }
 
-    if (isset($_POST['workout_difficulty'])) {
-        update_post_meta($post_id, '_workout_difficulty', sanitize_text_field($_POST['workout_difficulty']));
-    }
+        if (isset($_POST['workout_duration'])) {
+            update_post_meta($post_id, '_workout_duration', sanitize_text_field($_POST['workout_duration']));
+        }
 
-    if (isset($_POST['workout_equipment'])) {
-        update_post_meta($post_id, '_workout_equipment', sanitize_textarea($_POST['workout_equipment']));
+        if (isset($_POST['workout_difficulty'])) {
+            update_post_meta($post_id, '_workout_difficulty', sanitize_text_field($_POST['workout_difficulty']));
+        }
+
+        if (isset($_POST['workout_equipment'])) {
+            update_post_meta($post_id, '_workout_equipment', sanitize_textarea($_POST['workout_equipment']));
+        }
     }
 }
 add_action('save_post', 'fitness_save_workout_meta');
