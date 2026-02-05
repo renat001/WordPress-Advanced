@@ -23,21 +23,12 @@
             <?php get_search_form(); ?>
         </div>
 
-        <!-- About Section -->
-        <section class="about-section">
-            <h2>About Our Fitness Blog</h2>
-            <div class="about-content">
-                <div class="about-text">
-                    <p>Welcome to your go-to resource for comprehensive fitness information. Whether you're a beginner just starting your fitness journey or an experienced athlete looking to optimize your training, you'll find valuable content here. Our expert-curated workouts cover all fitness levels and goals.</p>
-                    <p>From high-intensity interval training to strength building, flexibility exercises to cardio routines – we've got everything you need to achieve your fitness goals. Each workout comes with detailed instructions, modifications for different fitness levels, and tips to maximize results.</p>
-                    <p>Join thousands of fitness enthusiasts who have transformed their health with our guidance and support. Our community is dedicated to helping you achieve your fitness dreams.</p>
-                </div>
-                <div class="about-image-placeholder">
-                        <div class="image-placeholder">
-                        <svg class="placeholder-icon" viewBox="0 0 300 300"><circle cx="150" cy="100" r="40" fill="none" stroke="#ccc" stroke-width="2"/><rect x="80" y="150" width="140" height="100" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="120" cy="180" r="15" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="180" cy="180" r="15" fill="none" stroke="#ccc" stroke-width="2"/><line x1="150" y1="210" x2="150" y2="250" stroke="#ccc" stroke-width="2"/><line x1="150" y1="230" x2="120" y2="250" stroke="#ccc" stroke-width="2"/><line x1="150" y1="230" x2="180" y2="250" stroke="#ccc" stroke-width="2"/></svg>
-                        <p><img src="https://images.unsplash.com/photo-1549576490-b0b4831ef60a?auto=format&fit=crop&w=1200&q=80" alt="Equipment" /></p>
-                    </div>
-                </div>
+        <!-- About teaser (moved to About page) -->
+        <section class="about-teaser">
+            <div class="container">
+                <h2>About Our Fitness Blog</h2>
+                <p class="section-description">Get deeper background, our mission, and the team behind the content on our About page.</p>
+                <p><a class="about-button" href="<?php echo esc_url( site_url('/about/') ); ?>">Read Our Story →</a></p>
             </div>
         </section>
 

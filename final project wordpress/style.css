@@ -1025,6 +1025,44 @@ footer p {
     .hero-content h1 { font-size: 1.8rem; }
 }
 
+/* Use hero image as background */
+.hero-section {
+    background-image: url('https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80');
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+    color: #fff;
+}
+
+.hero-section::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(8,22,28,0.45), rgba(8,22,28,0.45));
+    z-index: 0;
+}
+
+.hero-section .container,
+.hero-section .hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.about-button {
+    display: inline-block;
+    padding: 12px 20px;
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.12);
+    font-weight: 600;
+}
+
+.about-button:hover {
+    background: rgba(255,255,255,0.25);
+}
+
 /* Recent Workouts Widget Styling */
 .recent-workouts-list {
     list-style: none;
