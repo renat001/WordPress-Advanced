@@ -129,22 +129,42 @@ add_action('personal_options_update', 'fitness_save_user_profile_fields');
 add_action('edit_user_profile_update', 'fitness_save_user_profile_fields');
 
 function fitness_cpt() {
-    register_post_type('workout', array(
-        'labels' => array(
-            'name' => 'Workouts',
-            'singular_name' => 'Workout',
-            'add_new' => 'Add New Workout',
-            'edit_item' => 'Edit Workout'
-        ),
+    $labels = array(
+        'name' => _x('Workouts', 'post type general name', 'fitness-theme'),
+        'singular_name' => _x('Workout', 'post type singular name', 'fitness-theme'),
+        'menu_name' => _x('Workouts', 'admin menu', 'fitness-theme'),
+        'name_admin_bar' => _x('Workout', 'add new on admin bar', 'fitness-theme'),
+        'add_new' => _x('Add New', 'workout', 'fitness-theme'),
+        'add_new_item' => __('Add New Workout', 'fitness-theme'),
+        'new_item' => __('New Workout', 'fitness-theme'),
+        'edit_item' => __('Edit Workout', 'fitness-theme'),
+        'view_item' => __('View Workout', 'fitness-theme'),
+        'all_items' => __('All Workouts', 'fitness-theme'),
+        'search_items' => __('Search Workouts', 'fitness-theme'),
+        'parent_item_colon' => __('Parent Workouts:', 'fitness-theme'),
+        'not_found' => __('No workouts found.', 'fitness-theme'),
+        'not_found_in_trash' => __('No workouts found in Trash.', 'fitness-theme')
+    );
+
+    $args = array(
+        'labels' => $labels,
         'public' => true,
-        'has_archive' => true,
+        'publicly_queryable' => true,
         'show_ui' => true,
         'show_in_menu' => true,
-        'show_in_rest' => true,
-        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments'),
+        'query_var' => true,
+        'rewrite' => array('slug' => 'workouts'),
         'capability_type' => 'post',
-        'map_meta_cap' => true
-    ));
+        'has_archive' => true,
+        'hierarchical' => false,
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-heart',
+        'show_in_rest' => true,
+        'map_meta_cap' => true,
+        'supports' => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions')
+    );
+
+    register_post_type('workout', $args);
 }
 add_action('init', 'fitness_cpt');
 
@@ -228,3 +248,34 @@ function fitness_save_workout_meta($post_id) {
     }
 }
 add_action('save_post', 'fitness_save_workout_meta');
+
+// Admin helper: create demo workouts when visiting /wp-admin/?create_demo_workouts=1
+function fitness_create_demo_workouts() {
+    if (!is_admin()) return;
+    if (!isset($_GET['create_demo_workouts'])) return;
+    if (!current_user_can('manage_options')) return;
+
+    // Prevent repeated creation: check if workouts exist
+    $existing = new WP_Query(array('post_type' => 'workout', 'posts_per_page' => 1));
+    if ($existing->have_posts()) return;
+
+    $demos = array(
+        array('post_title' => 'Full Body Beginner Workout', 'post_content' => 'A beginner-friendly full body routine.'),
+        array('post_title' => 'HIIT Fat Burn Session', 'post_content' => 'High intensity interval training to boost metabolism.'),
+        array('post_title' => 'Strength & Mobility Mix', 'post_content' => 'Combination of strength exercises and mobility drills.')
+    );
+
+    foreach ($demos as $demo) {
+        $post_id = wp_insert_post(array(
+            'post_title' => $demo['post_title'],
+            'post_content' => $demo['post_content'],
+            'post_status' => 'publish',
+            'post_type' => 'workout'
+        ));
+    }
+    // Feedback: show admin notice
+    add_action('admin_notices', function() {
+        echo '<div class="updated"><p>3 demo workouts created. Refresh the Workouts menu.</p></div>';
+    });
+}
+add_action('admin_init', 'fitness_create_demo_workouts');
