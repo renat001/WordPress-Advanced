@@ -304,7 +304,72 @@ body {
     text-align: center;
     color: #999;
     font-size: 1.05rem;
-    margin-bottom: 40px;
+    margin-bottom: 24px;
+}
+
+/* Posts grid */
+.latest-workouts .posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+}
+
+.latest-workouts .post-item {
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.latest-workouts .post-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+}
+
+.post-thumbnail img.post-image,
+.post-image-placeholder img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post-header {
+    padding: 16px;
+}
+
+.post-header h3 {
+    font-size: 1.15rem;
+    margin-bottom: 8px;
+}
+
+.post-meta {
+    color: #777;
+    font-size: 0.95rem;
+}
+
+.post-content {
+    padding: 0 16px 20px 16px;
+    margin-top: auto;
+}
+
+.read-more {
+    display: inline-block;
+    margin-top: 12px;
+    color: #2c5364;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .latest-workouts .posts-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+    .latest-workouts .posts-grid { grid-template-columns: 1fr; }
 }
 
 /* Posts Grid */
@@ -918,4 +983,241 @@ footer p {
     margin-bottom: 20px;
     overflow: hidden;
     border-radius: 8px;
+}
+
+/* Recent Workouts Widget Styling */
+.recent-workouts-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recent-workout-item {
+    padding: 10px 0;
+    border-bottom: 1px dashed #eee;
+}
+
+.recent-workout-item a {
+    color: #2c5364;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.recent-workout-item a:hover {
+    color: #f39c12;
+}
+
+/* Entry Content Styling */
+.entry-content {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #333;
+    margin: 30px 0;
+}
+
+.entry-content p {
+    margin-bottom: 20px;
+}
+
+.entry-content img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 8px;
+}
+
+.entry-content a {
+    color: #2c5364;
+    text-decoration: none;
+    border-bottom: 2px solid #f39c12;
+    transition: all 0.3s ease;
+}
+
+.entry-content a:hover {
+    color: #f39c12;
+}
+
+/* Comments Section */
+.comments-area {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 3px solid #e0e0e0;
+}
+
+.comments-title {
+    font-size: 1.8rem;
+    color: #2c5364;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.comment-list {
+    list-style: none;
+    margin: 30px 0;
+}
+
+.comment-list li {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border-left: 4px solid #f39c12;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+}
+
+.comment-list li:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+.comment-author {
+    font-weight: 600;
+    color: #2c5364;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.comment-author img.avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.comment-metadata {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 15px;
+}
+
+.comment-text {
+    color: #555;
+    line-height: 1.8;
+    margin: 15px 0;
+}
+
+.comment-text p {
+    margin-bottom: 10px;
+}
+
+.comment-reply-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background: #2c5364;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.comment-reply-link:hover {
+    background: #f39c12;
+    color: white;
+}
+
+/* Comment Form */
+.comment-form {
+    margin-top: 40px;
+    padding: 30px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.comment-form h2 {
+    font-size: 1.5rem;
+    color: #2c5364;
+    margin-bottom: 20px;
+}
+
+.comment-form-comment,
+.comment-form p {
+    margin-bottom: 20px;
+}
+
+.comment-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.comment-form textarea,
+.comment-form input[type="text"],
+.comment-form input[type="email"],
+.comment-form input[type="url"] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+}
+
+.comment-form textarea:focus,
+.comment-form input[type="text"]:focus,
+.comment-form input[type="email"]:focus,
+.comment-form input[type="url"]:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 8px rgba(243, 156, 18, 0.2);
+}
+
+.comment-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.form-submit input {
+    padding: 12px 30px;
+    background: #f39c12;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-submit input:hover {
+    background: #e67e22;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(243, 156, 18, 0.3);
+}
+
+.no-comments {
+    padding: 20px;
+    background: #f0f0f0;
+    border-radius: 4px;
+    text-align: center;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+/* Edit Post Link */
+.entry-footer {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.entry-footer a {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #2c5364;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+}
+
+.entry-footer a:hover {
+    background: #f39c12;
+    border-bottom: none;
+    color: white;
 }

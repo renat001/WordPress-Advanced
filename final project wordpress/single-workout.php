@@ -33,7 +33,9 @@
                     ?>
                     <?php the_content(); ?>
                 </div>
-                <?php edit_post_link('Edit this workout'); ?>
+                <footer class="entry-footer">
+                    <?php edit_post_link('✏️ Edit this workout'); ?>
+                </footer>
             </article>
             
             <?php
