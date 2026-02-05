@@ -11,6 +11,11 @@
             <div class="archive-posts">
                 <?php while (have_posts()) : the_post(); ?>
                     <article class="archive-item">
+                        <?php if (has_post_thumbnail()) : ?>
+                            <div class="archive-thumbnail">
+                                <?php the_post_thumbnail('medium'); ?>
+                            </div>
+                        <?php endif; ?>
                         <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                         <div class="archive-excerpt">
                             <?php the_excerpt(); ?>

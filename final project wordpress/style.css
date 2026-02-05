@@ -899,3 +899,23 @@ footer p {
     height: auto;
     max-width: 100%;
 }
+
+/* Featured Images */
+.archive-thumbnail {
+    margin-bottom: 15px;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.archive-thumbnail img,
+.entry-thumbnail img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.entry-thumbnail {
+    margin-bottom: 20px;
+    overflow: hidden;
+    border-radius: 8px;
+}

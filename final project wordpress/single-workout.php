@@ -5,6 +5,11 @@
         <?php while (have_posts()) : the_post(); ?>
             <article class="single-workout">
                 <header class="entry-header">
+                    <?php if (has_post_thumbnail()) : ?>
+                        <div class="entry-thumbnail">
+                            <?php the_post_thumbnail('large'); ?>
+                        </div>
+                    <?php endif; ?>
                     <h1><?php the_title(); ?></h1>
                     <div class="post-meta">
                         <span class="post-date">📅 <?php echo get_the_date('M d, Y'); ?></span>

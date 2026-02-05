@@ -133,7 +133,7 @@ function fitness_cpt() {
         'labels' => array('name' => 'Workouts'),
         'public' => true,
         'has_archive' => true,
-        'supports' => array('title', 'editor', 'thumbnail', 'tags')
+        'supports' => array('title', 'editor', 'thumbnail', 'excerpt', 'author', 'comments')
     ));
 }
 add_action('init', 'fitness_cpt');
@@ -141,7 +141,9 @@ add_action('init', 'fitness_cpt');
 function fitness_taxonomy() {
     register_taxonomy('workout_type', 'workout', array(
         'label' => 'Workout Types',
-        'hierarchical' => true
+        'hierarchical' => true,
+        'public' => true,
+        'show_in_rest' => true
     ));
 }
 add_action('init', 'fitness_taxonomy');
