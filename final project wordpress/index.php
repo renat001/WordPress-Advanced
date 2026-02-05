@@ -7,7 +7,8 @@
             <div class="hero-image-container">
                 <div class="image-placeholder-large">
                     <svg class="placeholder-icon" viewBox="0 0 400 200"><rect x="20" y="20" width="360" height="160" fill="none" stroke="#ccc" stroke-width="2"/><circle cx="100" cy="70" r="30" fill="none" stroke="#ccc" stroke-width="2"/><path d="M 40 160 L 150 90 L 240 130 L 360 40" fill="none" stroke="#ccc" stroke-width="2"/></svg>
-                    <p><img src="running.jpg" alt="Workout" /></p>
+                    <p><img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80" alt="Workout" /></p>
+                </div>
             </div>
             <div class="hero-content">
                 <h1>Welcome to Fitness Blog</h1>

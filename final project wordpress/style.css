@@ -985,6 +985,46 @@ footer p {
     border-radius: 8px;
 }
 
+/* Hero Section */
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    padding: 40px 0;
+}
+
+.hero-image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-placeholder-large img {
+    width: 100%;
+    max-width: 540px;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.hero-content h1 {
+    font-size: 2.4rem;
+    color: #19323a;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    color: #555;
+    font-size: 1.05rem;
+}
+
+@media (max-width: 900px) {
+    .hero-section { grid-template-columns: 1fr; padding: 30px 0; }
+    .image-placeholder-large img { max-width: 100%; }
+    .hero-content h1 { font-size: 1.8rem; }
+}
+
 /* Recent Workouts Widget Styling */
 .recent-workouts-list {
     list-style: none;
